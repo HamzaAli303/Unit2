@@ -3,59 +3,60 @@ import java.util.Scanner;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
+
+class cupCake {
+    public double price;
+    public double getPrice(){
+        return price;
+    }
+    public void setPrice(double price){
+        this.price = price;
+    }
+    public void type(){
+        System.out.println("A basic, generic cupcake, with vanilla frosting");
+    }
+
+}
+class redVelvet extends cupCake{
+    public void type(){
+        System.out.println("A red velvet cupcake, with cream cheese frosting");
+    }
+}
+class Chocolate  extends cupCake{
+    public void type(){
+        System.out.println("A chocolate based cupcake, with chocolate frosting");
+    }
+}
+
+class Drink {
+    public double price;
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void type(){
+        System.out.println("A bottle of water");
+    }
+}
+
+class Soda extends Drink{
+    public void type(){
+        System.out.println("A bottle of soda");
+    }
+}
+
+class Milk extends Drink{
+    public void type(){
+        System.out.println("A bottle of milk");
+    }
+}
 public class Main {
     public static void main(String[] args) {
-       class cupCake {
-           public double price;
-           public double getPrice(){
-               return price;
-           }
-           public void setPrice(double price){
-               this.price = price;
-           }
-           public void type(){
-               System.out.println("A basic, generic cupcake, with vanilla frosting");
-           }
-
-       }
-       class redVelvet extends cupCake{
-           public void type(){
-               System.out.println("A red velvet cupcake, with cream cheese frosting");
-           }
-       }
-        class Chocolate  extends cupCake{
-            public void type(){
-                System.out.println("A chocolate based cupcake, with chocolate frosting");
-            }
-        }
-
-        class Drink {
-           public double price;
-
-            public double getPrice() {
-                return price;
-            }
-
-            public void setPrice(double price) {
-                this.price = price;
-            }
-
-            public void type(){
-
-            }
-        }
-
-        class Soda extends Drink{
-            public void type(){
-                System.out.println("A bottle of soda");
-            }
-        }
-
-        class Milk extends Drink{
-            public void type(){
-                System.out.println("A bottle of milk");
-            }
-        }
 
 
         ArrayList<cupCake> cupCakeMenu = new ArrayList<cupCake>();
@@ -123,5 +124,7 @@ public class Main {
         drinkMenu.add(milk);
 
         System.out.println(drinkMenu);
+
+        new Order(cupCakeMenu, drinkMenu);
     }
 }
